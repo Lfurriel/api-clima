@@ -1,3 +1,3 @@
-# api-clima
+# app-clima
 
-Api usando javascript para um sistema simples de clima
+App usando javascript para um sistema simples de clima.
