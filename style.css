@@ -69,3 +69,17 @@ h1.temp {
     text-transform: capitalize;
     margin-left: 8px;
 }
+
+.weather.loading {
+    visibility: hidden;
+    max-height: 20px;
+    position: relative;
+}
+
+.weather.loading::after {
+    visibility: visible;
+    content: "Carregando...";
+    color: white;
+    position: absolute;
+    top: 0;
+}
