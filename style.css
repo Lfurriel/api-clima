@@ -75,11 +75,3 @@ h1.temp {
     max-height: 20px;
     position: relative;
 }
-
-.weather.loading::after {
-    visibility: visible;
-    content: "Carregando...";
-    color: white;
-    position: absolute;
-    top: 0;
-}

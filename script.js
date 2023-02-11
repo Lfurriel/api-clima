@@ -14,13 +14,17 @@ let weather = {
         const {temp, humidity} = data.main;  //Dentro do JSON no bloco 'main' os campos 'temp' e 'humidity' se tornam variaveis
         const {speed} = data.wind; //Dentro do JSON no bloco 'wind' o campo 'speed' se torna variavel
 
-        document.querySelector(".city").innerText = "Clima em " + name;
-        document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + ".png";
-        document.querySelector(".description").innerText = description;
-        document.querySelector(".temp").innerText = temp + "°C";
-        document.querySelector(".humidity").innerText = "Umidade: " + humidity + "%";
-        document.querySelector(".wind").innerText = "Velocidade do vento: " + speed + " km/h";
+        console.log(data)
 
+        console.log(name, icon, description, temp, humidity, speed);
+
+        document.querySelector(".city").innerHTML = "Clima em " + name;
+        document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + ".png";
+        document.querySelector(".description").innerHTML = description;
+        document.querySelector(".temp").innerHTML = temp + "°C";
+        document.querySelector(".humidity").innerHTML = "Umidade: " + humidity + "%";
+        document.querySelector(".wind").innerHTML = "Velocidade do vento: " + speed + " km/h";
+        
         document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + name + "')";
 
         document.querySelector(".weather").classList.remove("loading");
@@ -38,5 +42,3 @@ document.querySelector(".searchBar").addEventListener("keyup", function(event) {
     if(event.key == "Enter")
         weather.search();
 });
-
-weather.fetchWeather("São Paulo")
